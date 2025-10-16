@@ -1,3 +1,33 @@
+function renderBooks () {
+  const booksWrapper = document.querySelector('.books');
+
+  const books = getBooks();
+
+  booksWrapper.innerHTML =
+  `<div class="book">
+    <figure class="book__img--wrapper">
+      <img class="book__img" src="${books[0].url}" alt="">
+    </figure>
+    <div class="book__title">
+      Crack the Coding Interview
+    </div>
+    <div class="book__ratings">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star-half-alt"></i>
+    </div>
+    <div class="book__price">
+      <span class="book__price--normal">$59.95</span> $14.95
+    </div>
+  </div>`
+}
+
+setTimeout(() => {
+  renderBooks();
+})
+
 function openMenu() {
   document.body.classList += " menu--open"
 }
@@ -13,7 +43,7 @@ function getBooks() {
     {
       id: 1,
       title: "Crack the Coding Interview",
-                url: "assets/crack the coding interview.png",
+      url: "assets/crack the coding interview.png",
       originalPrice: 49.95,
       salePrice: 14.95,
       rating: 4.5,
